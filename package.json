@@ -1,0 +1,40 @@
+{
+  "name": "schema-demo-factory",
+  "version": "1.0.0",
+  "description": "Generate realistic mock data from schema definitions using Faker.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "faker",
+    "mock",
+    "schema",
+    "data",
+    "generator",
+    "testing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/schema-demo-factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/schema-demo-factory/issues"
+  },
+  "homepage": "https://github.com/yourusername/schema-demo-factory#readme"
+}
