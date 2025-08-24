@@ -1,6 +1,6 @@
 import SchemaDemoFactory, { TypeSchema } from ".";
 
-const userSchema: TypeSchema = {
+const userSchema = {
   type: "object",
   properties: {
     id: { type: "uuid" },
@@ -8,12 +8,30 @@ const userSchema: TypeSchema = {
     username: { type: "string", pattern: "name" },
     age: { type: "number", min: 18, max: 80 },
     isActive: { type: "boolean" },
+    nickname: { type: "string", optional: true },
+    lastLogin: { type: "date", nullable: true },
   },
-} as const;
+} as const satisfies TypeSchema;
 
 const mockUser = SchemaDemoFactory.create(userSchema);
-console.log(mockUser);
+// Type: {
+//   id: string;
+//   email: string;
+//   username: string;
+//   age: number;
+//   isActive: boolean;
+//   nickname: string | undefined;
+//   lastLogin: Date | null;
+// }
 
-// Generate multiple instances
 const mockUsers = SchemaDemoFactory.createMultiple(userSchema, 5);
-console.log(mockUsers);
+console.warn("DEBUGPRINT[33]: demo.ts:27: mockUsers=", mockUsers);
+// Type: Array<{
+//   id: string;
+//   email: string;
+//   username: string;
+//   age: number;
+//   isActive: boolean;
+//   nickname: string | undefined;
+//   lastLogin: Date | null;
+// }>
